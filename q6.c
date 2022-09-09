@@ -1,3 +1,4 @@
+//WAP to access array elements using pointer decrement concept
 #include <stdio.h>
 void main()
 {

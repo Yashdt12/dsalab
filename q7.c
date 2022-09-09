@@ -1,3 +1,4 @@
+//WAP to find out middle element of an array using pointer comparison
 #include <stdio.h>
 void main()
 {
