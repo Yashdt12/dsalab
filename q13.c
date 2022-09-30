@@ -9,9 +9,9 @@ void main()
     for(int i=0;i<size;i++)
         scanf("%d",&a[i]);
     for(int i=0;i<size;i++)
-        b[i]=a[size-i];
+        b[i]=a[size-i-1];
     printf("Array elements after reversing are: ");
-    for(int i=size-1;i>=0;i--)
-        printf("%d ",a[i]);
+    for(int i=0;i<size;i++)
+        printf("%d ",b[i]);
     printf("\n");
 }
