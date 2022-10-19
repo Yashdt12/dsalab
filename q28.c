@@ -1,18 +1,22 @@
 // WAP to print Fibonacci series using recursion
-#include <stdio.h>
-int fibonacci(int);
-void main(){
-    int n;
-    printf("Enter a number: ");
+#include<stdio.h>    
+void fibonacci(int);
+void main(){    
+    int n;    
+    printf("Enter the number of elements: ");
     scanf("%d",&n);
-    fibonacci(n);
+    printf("Fibonacci Series: ");
+    printf("0 1 ");
+    fibonacci(n-2);
     printf("\n");
 }
-int fibonacci(int n){
-    if(n<3){
-        printf("0 1 ");
-    }
-    else{
-        printf("%d ",fibonacci(n-1)+fibonacci(n-2));
-    }
+void fibonacci(int n){
+    static int a=0,b=1,c;
+    if(n>0){
+        c = a + b;
+        a = b;
+        b = c;
+        printf("%d ",c);
+        fibonacci(n-1);   
+    }    
 }

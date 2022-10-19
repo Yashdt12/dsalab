@@ -1,22 +1,17 @@
 // WAP to find GCD of two numbers using recursion
-#include<stdio.h>    
-void fibonacci(int);
-void main(){    
-    int n;    
-    printf("Enter the number of elements: ");
-    scanf("%d",&n);
-    printf("Fibonacci Series: ");
-    printf("0 1 ");
-    fibonacci(n-2);
-    printf("\n");
+#include <stdio.h>
+int gcd(int,int);
+void main(){
+    int a,b;
+    printf("Enter two numbers: ");
+    scanf("%d %d",&a,&b);
+    int max=a>b?a:b;
+    int min=a<b?a:b;
+    printf("Greatest common divisor of %d and %d is: %d\n",a,b,gcd(max,min));
 }
-void fibonacci(int n){
-    static int a=0,b=1,c;
-    if(n>0){
-        c = a + b;
-        a = b;
-        b = c;
-        printf("%d ",c);
-        fibonacci(n-1);   
-    }    
+int gcd(int a,int b){
+    if(a%b==0){
+        return b;
+    }
+    return gcd(b,(a%b));
 }
