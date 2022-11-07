@@ -30,15 +30,6 @@ void insert(int value,int position){
         new->next=head;
         head=new;
     }
-    else if(position==len+1){
-        node *new=(node*)malloc(sizeof(node)),*temp=head;
-        new->data=value;
-        while(temp->next!=head){
-            temp=temp->next;
-        }
-        temp->next=new;
-        new->next=head;
-    }
     else{
         node *new=(node*)malloc(sizeof(node)),*temp=head;
         new->data=value;
@@ -60,14 +51,6 @@ void delete(int position){
             temp=temp->next;
         }
         head=head->next;
-        free(temp->next);
-        temp->next=head;
-    }
-    else if(position==len){
-        node *temp=head;
-        while(temp->next->next!=head){
-            temp=temp->next;
-        }
         free(temp->next);
         temp->next=head;
     }
@@ -106,7 +89,7 @@ void main(){
     head->next=head;
     insert(5,1);
     insert(10,3);
-    delete(2);
+    delete(3);
     printCircularList();
     freeCircularList(head);
 }
